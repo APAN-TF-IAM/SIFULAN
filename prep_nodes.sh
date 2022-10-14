@@ -140,6 +140,18 @@ login_node ()
     echo "ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx" >> $out_file
     echo "ln -s /opt/kubectx/kubens /usr/local/bin/kubens" >> $out_file
     echo "" >> $out_file
+
+    echo "# Install k9s" >> $out_file
+    echo "curl -Lo k9s_Linux_x86_64.tar.gz \"https://github.com/derailed/k9s/releases/latest/download/k9s_Linux_x86_64.tar.gz\"" >> $out_file
+    echo "tar -C /usr/local/bin -zxf k9s_Linux_x86_64.tar.gz k9s" >> $out_file
+
+    echo "# Install rke" >> $out_file
+    echo "curl -Lo rke https://github.com/rancher/rke/releases/download/v1.3.14/rke_linux-amd64" >> $out_file
+    echo "chmod +x rke" >> $out_file
+    echo "mv rke /usr/local/bin" >> $out_file
+
+    echo "# Install helm" >> $out_file
+    echo "curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash" >> $out_file
 }
 
 
