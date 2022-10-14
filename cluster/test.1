@@ -25,3 +25,12 @@ git clone https://github.com/ahmetb/kubectx /opt/kubectx
 ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
 ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 
+# Install k9s
+curl -Lo k9s_Linux_x86_64.tar.gz "https://github.com/derailed/k9s/releases/latest/download/k9s_Linux_x86_64.tar.gz"
+tar -C /usr/local/bin -zxf k9s_Linux_x86_64.tar.gz k9s
+# Install rke
+curl -Lo rke https://github.com/rancher/rke/releases/download/v1.3.14/rke_linux-amd64
+chmod +x rke
+mv rke /usr/local/bin
+# Install helm
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
